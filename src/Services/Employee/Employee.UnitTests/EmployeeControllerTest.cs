@@ -89,7 +89,7 @@ public class EmployeeControllerTest
         // Assert
         Assert.NotNull(result);
         Assert.NotNull(resultItem);
-        Assert.IsAssignableFrom<EmployeeModel>(resultItem);
+        Assert.IsType<EmployeeModel>(resultItem);
         Assert.Equal(id, Id);
         Assert.Equal((int)System.Net.HttpStatusCode.OK, StatusCode);
     }

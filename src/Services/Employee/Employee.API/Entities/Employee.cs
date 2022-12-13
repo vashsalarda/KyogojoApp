@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
 namespace Employee.API.Entities
@@ -7,8 +8,10 @@ namespace Employee.API.Entities
 
         [JsonProperty("id")]
         public string? Id { get; set; }
+        [Required]
         [JsonProperty("userId")]
         public string? UserId { get; set; }
+        [Required]
         [JsonProperty("region")]
         public string? Region { get; set; }
         [JsonProperty("level")]

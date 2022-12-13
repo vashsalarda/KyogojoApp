@@ -6,7 +6,7 @@ using Employee.API.Repositories.Interfaces;
 namespace Employee.API.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/v1/employees")]
 public class EmployeeController : ControllerBase
 {
 
@@ -73,6 +73,8 @@ public class EmployeeController : ControllerBase
     {
         EmployeeModel user = new();
 
+        if (payload.UserId != null)
+            user.UserId = payload.UserId;
         if (payload.Region != null)
             user.Region = payload.Region;
         if (payload.Level > 0)
