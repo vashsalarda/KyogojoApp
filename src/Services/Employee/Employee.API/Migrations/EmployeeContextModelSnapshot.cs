@@ -44,6 +44,7 @@ namespace Employee.API.Migrations
                         .HasColumnName("position");
 
                     b.Property<string>("Region")
+                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("region");
 
@@ -52,6 +53,7 @@ namespace Employee.API.Migrations
                         .HasColumnName("title");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("userid");
 

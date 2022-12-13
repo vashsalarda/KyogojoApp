@@ -15,8 +15,8 @@ namespace Employee.API.Migrations
                 columns: table => new
                 {
                     id = table.Column<string>(type: "text", nullable: false),
-                    userid = table.Column<string>(type: "text", nullable: true),
-                    region = table.Column<string>(type: "text", nullable: true),
+                    userid = table.Column<string>(type: "text", nullable: false),
+                    region = table.Column<string>(type: "text", nullable: false),
                     level = table.Column<int>(type: "integer", nullable: false),
                     title = table.Column<string>(type: "text", nullable: true),
                     division = table.Column<string>(type: "text", nullable: true),

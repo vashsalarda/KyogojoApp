@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Employee.API.Migrations
 {
     [DbContext(typeof(EmployeeContext))]
-    [Migration("20221212142545_InitialMigration")]
+    [Migration("20221213130643_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -47,6 +47,7 @@ namespace Employee.API.Migrations
                         .HasColumnName("position");
 
                     b.Property<string>("Region")
+                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("region");
 
@@ -55,6 +56,7 @@ namespace Employee.API.Migrations
                         .HasColumnName("title");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("userid");
 
