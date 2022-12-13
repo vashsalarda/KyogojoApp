@@ -1,0 +1,25 @@
+using Newtonsoft.Json;
+
+namespace Employee.API.Entities
+{
+    public class EmployeeModel
+    {
+
+        [JsonProperty("id")]
+        public string? Id { get; set; }
+        [JsonProperty("userId")]
+        public string? UserId { get; set; }
+        [JsonProperty("region")]
+        public string? Region { get; set; }
+        [JsonProperty("level")]
+        public int Level { get; set; }
+        [JsonProperty("title")]
+        public string? Title { get; set; }
+        [JsonProperty("division")]
+        public string? Division { get; set; }
+        [JsonProperty("position")]
+        public string? Position { get; set; }
+        [JsonProperty("designation")]
+        public string? Designation { get; set; }
+    }
+}
