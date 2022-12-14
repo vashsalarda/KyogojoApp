@@ -24,7 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Employee.API\Employee.API.csproj" />
-    <ProjectReference Include="..\Employee.SharedDatabaseSetup\Store.SharedDatabaseSetup.csproj" />
+    <ProjectReference Include="..\Employee.SharedDatabaseSetup\Employee.SharedDatabaseSetup.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Microsoft.AspNetCore.Mvc.Testing" />

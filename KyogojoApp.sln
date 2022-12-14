@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employee.UnitTests", "src\S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employee.FunctionalTests", "src\Services\Employee\Employee.FunctionalTests\Employee.FunctionalTests.csproj", "{C44F0A83-AD5A-4D78-9075-8EDDF00A76B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.SharedDatabaseSetup", "src\Services\Employee\Employee.SharedDatabaseSetup\Store.SharedDatabaseSetup.csproj", "{BE7E05E5-8888-40DB-8EC7-869FC6692E8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employee.SharedDatabaseSetup", "src\Services\Employee\Employee.SharedDatabaseSetup\Employee.SharedDatabaseSetup.csproj", "{BE7E05E5-8888-40DB-8EC7-869FC6692E8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
