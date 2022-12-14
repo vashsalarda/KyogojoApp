@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using Employee.API.Entities;
+﻿using Employee.API.Entities;
 using Employee.FunctionalTests.Models;
 using System.Text;
 
@@ -20,6 +19,7 @@ namespace Employee.FunctionalTests.Controllers
 
             var stringResponse = await response.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<IEnumerable<EmployeeModel>>(stringResponse)?.ToList();
+            
             var statusCode = response.StatusCode.ToString();
             Assert.Equal("OK", statusCode);
             Assert.True(result?.Count == 10);
@@ -28,7 +28,7 @@ namespace Employee.FunctionalTests.Controllers
         [Fact]
         public async Task GetEmployeeById_EmployeeExists_ReturnsCorrectEmployee()
         {
-            var id = "1001";
+            var id = "1003";
             var client = this.GetNewClient();
             var response = await client.GetAsync($"/api/v1/employees/{id}");
             response.EnsureSuccessStatusCode();
@@ -39,9 +39,14 @@ namespace Employee.FunctionalTests.Controllers
 
             Assert.Equal("OK", statusCode);
             Assert.Equal(id, result?.Id);
-            Assert.NotNull(result?.Title);
+            Assert.NotNull(result?.UserId);
+            Assert.NotNull(result?.Region);
+            Assert.IsType<string>(result.UserId);
             Assert.IsType<string>(result.Region);
+            Assert.IsType<string>(result.Title);
+            Assert.IsType<string>(result.Division);
             Assert.IsType<string>(result.Position);
+            Assert.IsType<string>(result.Designation);
         }
 
         [Theory]
@@ -66,9 +71,12 @@ namespace Employee.FunctionalTests.Controllers
 
             var request = new EmployeeModel
             {
-                UserId = "1012",
+                UserId = "1011",
                 Region = "X",
-                Title = "Hello"
+                Title = "Engr.",
+                Division = "IT",
+                Position = "Major",
+                Designation = "Problem"
             };
 
             var stringContent = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
@@ -136,10 +144,10 @@ namespace Employee.FunctionalTests.Controllers
 
             // Update employee
 
-            var id = "1001";
+            var id = "1005";
             var request = new EmployeeModel
             {
-                UserId = "1002",
+                UserId = "1005",
                 Region = "X",
                 Title = "Hi"
             };
@@ -173,7 +181,7 @@ namespace Employee.FunctionalTests.Controllers
         public async Task DeleteEmployeeById_ReturnsNoContent()
         {
             var client = this.GetNewClient();
-            var id = "1002";
+            var id = "1010";
 
             // Delete employee
 

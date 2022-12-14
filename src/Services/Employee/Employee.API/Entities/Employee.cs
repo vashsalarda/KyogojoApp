@@ -15,7 +15,7 @@ namespace Employee.API.Entities
         [JsonProperty("region")]
         public string? Region { get; set; }
         [JsonProperty("level")]
-        public int Level { get; set; }
+        public int Level { get; set; } = 1;
         [JsonProperty("title")]
         public string? Title { get; set; }
         [JsonProperty("division")]

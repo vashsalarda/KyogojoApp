@@ -10,21 +10,6 @@ namespace Employee.API.Controllers;
 public class EmployeeController : ControllerBase
 {
 
-    private readonly List<EmployeeModel> employees = new ()
-    {
-        new EmployeeModel()
-        {
-            Id = "1001",
-            UserId = "",
-            Region = "X",
-            Level = 1,
-            Title = "Admin",
-            Division = "Internal",
-            Position = "Admin",
-            Designation = "Admin"   
-        }
-    };
-
     private readonly IEmployeeRepository _repository;
     private readonly ILogger<EmployeeController> _logger;
 

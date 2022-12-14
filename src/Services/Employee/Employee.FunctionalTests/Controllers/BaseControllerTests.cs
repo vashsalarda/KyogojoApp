@@ -1,8 +1,4 @@
-﻿using System.Net.Http;
-using Employee.FunctionalTests;
-using Xunit;
-
-namespace Employee.FunctionalTests.Controllers
+﻿namespace Employee.FunctionalTests.Controllers
 {
     public class BaseControllerTests : IClassFixture<CustomWebApplicationFactory<Program>>
     {
