@@ -40,14 +40,13 @@ namespace Employee.API.Repositories
 
             var affected =
                 await connection.ExecuteAsync
-                    ("INSERT INTO Employees (Id, UserId, Region, Level, Title, Division, Position, Designation) VALUES (@Id, @UserId, @Region, @Level, @Title, @Division, @Position, @Designation)",
+                    ("INSERT INTO Employees (Id, UserId, Region, Level, Title, Department, Position, Designation) VALUES (@Id, @UserId, @Region, @Level, @Title, @Department, @Position, @Designation)",
                         new { 
                             Id = customer.Id,
                             UserId = customer.UserId,
                             Region = customer.Region,
-                            Level = customer.Level,
                             Title = customer.Title,
-                            Division = customer.Division,
+                            Department = customer.Department,
                             Position = customer.Position,
                             Designation = customer.Designation
                         });
@@ -68,9 +67,8 @@ namespace Employee.API.Repositories
                         Id = id,
                         UserId = employee.UserId,
                         Region = employee.Region,
-                        Level = employee.Level,
                         Title = employee.Title,
-                        Division = employee.Division,
+                        Department = employee.Department,
                         Position = employee.Position,
                         Designation = employee.Designation
                     });

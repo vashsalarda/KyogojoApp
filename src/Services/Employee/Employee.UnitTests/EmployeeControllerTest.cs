@@ -1,7 +1,6 @@
 ﻿using Employee.API.Controllers;
 using Employee.API.Entities;
 using Employee.API.Repositories.Interfaces;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Employee.UnitTests;
@@ -24,9 +23,8 @@ public class EmployeeControllerTest
                 Id = "1001",
                 UserId = "1001",
                 Region = "X",
-                Level = 1,
                 Title = "Admin",
-                Division = "Internal",
+                Department = "Internal",
                 Position = "Admin",
                 Designation = "Admin"
             },
@@ -35,9 +33,8 @@ public class EmployeeControllerTest
                 Id = "1002",
                 UserId = "1002",
                 Region = "X",
-                Level = 1,
                 Title = "Admin",
-                Division = "Internal",
+                Department = "Internal",
                 Position = "Admin",
                 Designation = "Admin"
             },
@@ -103,9 +100,8 @@ public class EmployeeControllerTest
             Id = "1003",
             UserId = "1003",
             Region = "X",
-            Level = 1,
             Title = "Admin",
-            Division = "Internal",
+            Department = "Internal",
             Position = "Admin",
             Designation = "Admin"
         };
@@ -125,8 +121,7 @@ public class EmployeeControllerTest
         Assert.Equal("1003", employeeObj.UserId);
         Assert.Equal("1003", employeeObj?.UserId);
         Assert.Equal("X", employeeObj?.Region);
-        Assert.Equal(1, employeeObj?.Level);
-        Assert.Equal("Internal", employeeObj?.Division);
+        Assert.Equal("Internal", employeeObj?.Department);
         Assert.Equal("Admin", employeeObj?.Position);
         Assert.Equal("Admin", employeeObj?.Designation);
         Assert.Equal((int)System.Net.HttpStatusCode.Created, StatusCode);
@@ -140,9 +135,8 @@ public class EmployeeControllerTest
         EmployeeModel user = new()
         {
             Region = "X",
-            Level = 1,
             Title = "Admin",
-            Division = "Internal",
+            Department = "Internal",
             Position = "Admin",
             Designation = "Admin"
         };

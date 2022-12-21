@@ -17,7 +17,7 @@ namespace Employee.SharedDatabaseSetup
                 .RuleFor(o => o.UserId, f => (userIdStart++).ToString())
                 .RuleFor(o => o.Region, f => "X")
                 .RuleFor(o => o.Title, f => "Engr.")
-                .RuleFor(o => o.Division, f => "Bukidnon")
+                .RuleFor(o => o.Department, f => "Bukidnon")
                 .RuleFor(o => o.Position, f => "Head")
                 .RuleFor(o => o.Designation, f => "Ache");
 

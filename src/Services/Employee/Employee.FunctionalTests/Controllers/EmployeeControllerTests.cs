@@ -44,7 +44,7 @@ namespace Employee.FunctionalTests.Controllers
             Assert.IsType<string>(result.UserId);
             Assert.IsType<string>(result.Region);
             Assert.IsType<string>(result.Title);
-            Assert.IsType<string>(result.Division);
+            Assert.IsType<string>(result.Department);
             Assert.IsType<string>(result.Position);
             Assert.IsType<string>(result.Designation);
         }
@@ -74,7 +74,7 @@ namespace Employee.FunctionalTests.Controllers
                 UserId = "1011",
                 Region = "X",
                 Title = "Engr.",
-                Division = "IT",
+                Department = "IT",
                 Position = "Major",
                 Designation = "Problem"
             };

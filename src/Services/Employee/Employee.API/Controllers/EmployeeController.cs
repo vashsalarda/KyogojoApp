@@ -62,12 +62,10 @@ public class EmployeeController : ControllerBase
             user.UserId = payload.UserId;
         if (payload.Region != null)
             user.Region = payload.Region;
-        if (payload.Level > 0)
-            user.Level = payload.Level;
         if (payload.Title != null)
             user.Title = payload.Title;
-        if (payload.Division != null)
-            user.Division = payload.Division;
+        if (payload.Department != null)
+            user.Department = payload.Department;
         if (payload.Position != null)
             user.Position = payload.Position;
         if (payload.Designation != null)
