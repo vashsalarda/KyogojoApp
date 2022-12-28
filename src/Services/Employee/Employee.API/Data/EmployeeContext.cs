@@ -34,7 +34,7 @@ namespace Employee.API.Data
 				e.Property(e => e.Province).HasColumnName("province");
 				e.Property(e => e.Region).HasColumnName("region");
 				e.Property(e => e.Title).HasColumnName("title");
-				e.Property(e => e.Department).HasColumnName("division");
+				e.Property(e => e.Department).HasColumnName("department");
 				e.Property(e => e.Position).HasColumnName("position");
 				e.Property(e => e.Designation).HasColumnName("designation");
 				e.Property(e => e.DateHired).HasColumnName("datehired");

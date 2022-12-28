@@ -24,7 +24,7 @@ namespace Employee.API.Migrations
                     province = table.Column<string>(type: "text", nullable: true),
                     region = table.Column<string>(type: "text", nullable: true),
                     title = table.Column<string>(type: "text", nullable: true),
-                    division = table.Column<string>(type: "text", nullable: true),
+                    department = table.Column<string>(type: "text", nullable: true),
                     position = table.Column<string>(type: "text", nullable: true),
                     designation = table.Column<string>(type: "text", nullable: true),
                     datehired = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),

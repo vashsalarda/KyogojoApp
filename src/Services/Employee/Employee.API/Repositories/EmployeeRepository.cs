@@ -40,15 +40,18 @@ namespace Employee.API.Repositories
 
             var affected =
                 await connection.ExecuteAsync
-                    ("INSERT INTO Employees (Id, UserId, Region, Level, Title, Department, Position, Designation) VALUES (@Id, @UserId, @Region, @Level, @Title, @Department, @Position, @Designation)",
+                    ("INSERT INTO Employees (Id, UserId, Branch, Region, Title, Department, Position, Designation, DateHired)" + 
+                        " VALUES (@Id, @UserId, @Branch, @Region, @Title, @Department, @Position, @Designation, @DateHired)",
                         new { 
                             Id = customer.Id,
                             UserId = customer.UserId,
+                            Branch = customer.Branch,
                             Region = customer.Region,
                             Title = customer.Title,
                             Department = customer.Department,
                             Position = customer.Position,
-                            Designation = customer.Designation
+                            Designation = customer.Designation,
+                            DateHired = customer.DateHired
                         });
 
             if (affected == 0)
@@ -62,10 +65,11 @@ namespace Employee.API.Repositories
             using var connection = new NpgsqlConnection(_configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
 
             var affected = await connection.ExecuteAsync
-                ("UPDATE Employees SET UserId=@UserId, Region=@Region, Level=@Level, Title=@Title, Position=@Position, Designation=@Designation WHERE Id=@Id",
+                ("UPDATE Employees SET UserId=@UserId, Branch=@Branch, Region=@Reg ion, Title=@Title, Position=@Position, Designation=@Designation WHERE Id=@Id",
                     new {
                         Id = id,
                         UserId = employee.UserId,
+                        Branch = employee.Branch,
                         Region = employee.Region,
                         Title = employee.Title,
                         Department = employee.Department,

@@ -1,5 +1,6 @@
 ﻿using Employee.API.Entities;
 using Employee.FunctionalTests.Models;
+using System;
 using System.Text;
 
 namespace Employee.FunctionalTests.Controllers
@@ -47,6 +48,7 @@ namespace Employee.FunctionalTests.Controllers
             Assert.IsType<string>(result.Department);
             Assert.IsType<string>(result.Position);
             Assert.IsType<string>(result.Designation);
+            Assert.IsType<DateTime>(result.DateHired);
         }
 
         [Theory]
@@ -72,11 +74,12 @@ namespace Employee.FunctionalTests.Controllers
             var request = new EmployeeModel
             {
                 UserId = "1011",
-                Region = "X",
+                Branch = "Malaybalay - Main",
                 Title = "Engr.",
                 Department = "IT",
                 Position = "Major",
-                Designation = "Problem"
+                Designation = "Problem",
+                DateHired = DateTime.Now.ToUniversalTime()
             };
 
             var stringContent = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
@@ -133,7 +136,7 @@ namespace Employee.FunctionalTests.Controllers
             Assert.NotNull(badRequest?.Errors);
             Assert.Equal(2, badRequest.Errors.Count);
             Assert.Contains(badRequest.Errors.Keys, k => k == "UserId");
-            Assert.Contains(badRequest.Errors.Keys, k => k == "Region");
+            Assert.Contains(badRequest.Errors.Keys, k => k == "Branch");
         }
 
 
@@ -148,7 +151,7 @@ namespace Employee.FunctionalTests.Controllers
             var request = new EmployeeModel
             {
                 UserId = "1005",
-                Region = "X",
+                Branch = "Malaybalay - Main",
                 Title = "Hi"
             };
 

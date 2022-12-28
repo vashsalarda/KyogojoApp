@@ -32,7 +32,7 @@ namespace Employee.API.Entities
         [JsonProperty("designation")]
         public string? Designation { get; set; }
         [JsonProperty("dateHired")]
-        public DateTime DateHired { get; set; }
+        public DateTime? DateHired { get; set; }
         [JsonProperty("sss")]
         public string? SSS { get; set; }
         [JsonProperty("phic")]

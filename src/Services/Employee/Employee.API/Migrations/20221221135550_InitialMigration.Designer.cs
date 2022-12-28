@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Employee.API.Migrations
 {
     [DbContext(typeof(EmployeeContext))]
-    [Migration("20221221094216_InitialMigration")]
+    [Migration("20221221135550_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -62,7 +62,7 @@ namespace Employee.API.Migrations
 
                     b.Property<string>("Department")
                         .HasColumnType("text")
-                        .HasColumnName("division");
+                        .HasColumnName("department");
 
                     b.Property<string>("Designation")
                         .HasColumnType("text")

@@ -59,7 +59,7 @@ namespace Employee.API.Migrations
 
                     b.Property<string>("Department")
                         .HasColumnType("text")
-                        .HasColumnName("division");
+                        .HasColumnName("department");
 
                     b.Property<string>("Designation")
                         .HasColumnType("text")

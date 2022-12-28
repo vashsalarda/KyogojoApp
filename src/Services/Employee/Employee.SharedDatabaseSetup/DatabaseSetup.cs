@@ -15,11 +15,15 @@ namespace Employee.SharedDatabaseSetup
             var fakeEmployees = new Faker<EmployeeModel>()
                 .RuleFor(o => o.Id, f => (employeeIdStart++).ToString())
                 .RuleFor(o => o.UserId, f => (userIdStart++).ToString())
+                .RuleFor(o => o.Branch, f => "Main")
+                .RuleFor(o => o.City, f => "Malaybalay")
+                .RuleFor(o => o.Province, f => "BUK")
                 .RuleFor(o => o.Region, f => "X")
                 .RuleFor(o => o.Title, f => "Engr.")
-                .RuleFor(o => o.Department, f => "Bukidnon")
+                .RuleFor(o => o.Department, f => "Admin")
                 .RuleFor(o => o.Position, f => "Head")
-                .RuleFor(o => o.Designation, f => "Ache");
+                .RuleFor(o => o.Designation, f => "Ache")
+                .RuleFor(o => o.DateHired, f => DateTime.Now.ToUniversalTime());
 
             var employees = fakeEmployees.Generate(10);
 
