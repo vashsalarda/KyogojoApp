@@ -60,6 +60,10 @@ public class EmployeeController : ControllerBase
 
         if (payload.UserId != null)
             user.UserId = payload.UserId;
+        if (payload.ContactNumber != null)
+            user.ContactNumber = payload.ContactNumber;
+        if (payload.Email != null)
+            user.Email = payload.Email;
         if (payload.Branch != null)
             if (payload.Province != null)
             user.Province = payload.Province;

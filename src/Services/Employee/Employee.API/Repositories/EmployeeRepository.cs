@@ -45,6 +45,7 @@ namespace Employee.API.Repositories
                             Id = customer.Id,
                             UserId = customer.UserId,
                             Branch = customer.Branch,
+                            City = customer.City,
                             Province = customer.Province,
                             Region = customer.Region,
                             Title = customer.Title,
@@ -65,10 +66,12 @@ namespace Employee.API.Repositories
             using var connection = new NpgsqlConnection(_configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
 
             var affected = await connection.ExecuteAsync
-                ("UPDATE Employees SET UserId=@UserId, Branch=@Branch, Province=@Province, Region=@Region, Title=@Title, Department=@Department, Position=@Position, Designation=@Designation WHERE Id=@Id",
+                ("UPDATE Employees SET UserId=@UserId, ContactNumber=@ContactNumber, Email=@Email, Branch=@Branch, Province=@Province, Region=@Region, Title=@Title, Department=@Department, Position=@Position, Designation=@Designation WHERE Id=@Id",
                     new {
                         Id = id,
                         UserId = employee.UserId,
+                        Email = employee.Email,
+                        ContactNumber = employee.ContactNumber,
                         Branch = employee.Branch,
                         City = employee.City,
                         Province = employee.Province,

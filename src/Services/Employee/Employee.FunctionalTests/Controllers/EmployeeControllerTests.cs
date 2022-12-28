@@ -73,8 +73,12 @@ namespace Employee.FunctionalTests.Controllers
 
             var request = new EmployeeModel
             {
+                ContactNumber = "09271478417",
+                Email = "vashful.v2@gmail.com",
                 UserId = "1011",
                 Branch = "Malaybalay - Main",
+                City = "Malaybalay",
+                Province = "Buk",
                 Title = "Engr.",
                 Department = "IT",
                 Position = "Major",
@@ -146,13 +150,20 @@ namespace Employee.FunctionalTests.Controllers
             var client = this.GetNewClient();
 
             // Update employee
-
             var id = "1005";
             var request = new EmployeeModel
             {
                 UserId = "1005",
+                Title = "Hi",
+                ContactNumber = "09271478417",
+                Email = "vashful.v2@gmail.com",
                 Branch = "Malaybalay - Main",
-                Title = "Hi"
+                City = "Malaybalay",
+                Province = "Buk",
+                Department = "IT",
+                Position = "Major",
+                Designation = "Problem",
+                DateHired = DateTime.Now.ToUniversalTime()
             };
 
             var stringContent = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
@@ -160,7 +171,6 @@ namespace Employee.FunctionalTests.Controllers
             var response1 = await client.PatchAsync($"/api/v1/employees/{id}", stringContent);
             response1.EnsureSuccessStatusCode();
 
-            var stringResponse1 = await response1.Content.ReadAsStringAsync();
             var statusCode1 = response1.StatusCode.ToString();
             Assert.Equal("NoContent", statusCode1);
 
@@ -176,8 +186,16 @@ namespace Employee.FunctionalTests.Controllers
             Assert.Equal("OK", statusCode2);
             Assert.Equal(id, result2?.Id);
             Assert.Equal(request.UserId, result2?.UserId);
-            Assert.Equal(request.Branch, result2?.Branch);
             Assert.Equal(request.Title, result2?.Title);
+            Assert.Equal(request.ContactNumber, result2?.ContactNumber);
+            Assert.Equal(request.Email, result2?.Email);
+            Assert.Equal(request.Branch, result2?.Branch);
+            Assert.Equal(request.City, result2?.City);
+            Assert.Equal(request.Province, result2?.Province);
+            Assert.Equal(request.Department, result2?.Department);
+            Assert.Equal(request.Position, result2?.Position);
+            Assert.Equal(request.Designation, result2?.Designation);
+            // Assert.Equal(request.DateHired, result2?.DateHired);
         }
 
         [Fact]
