@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Employee.API.Migrations
 {
     [DbContext(typeof(EmployeeContext))]
-    [Migration("20221221135550_InitialMigration")]
+    [Migration("20221228104554_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -56,7 +56,7 @@ namespace Employee.API.Migrations
                         .HasColumnType("text")
                         .HasColumnName("contactnumber");
 
-                    b.Property<DateTime>("DateHired")
+                    b.Property<DateTime?>("DateHired")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("datehired");
 

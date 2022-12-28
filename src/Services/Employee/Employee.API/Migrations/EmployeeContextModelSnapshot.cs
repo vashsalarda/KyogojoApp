@@ -53,7 +53,7 @@ namespace Employee.API.Migrations
                         .HasColumnType("text")
                         .HasColumnName("contactnumber");
 
-                    b.Property<DateTime>("DateHired")
+                    b.Property<DateTime?>("DateHired")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("datehired");
 

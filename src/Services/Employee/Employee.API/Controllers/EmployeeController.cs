@@ -61,6 +61,9 @@ public class EmployeeController : ControllerBase
         if (payload.UserId != null)
             user.UserId = payload.UserId;
         if (payload.Branch != null)
+            if (payload.Province != null)
+            user.Province = payload.Province;
+        if (payload.Branch != null)
             user.Branch = payload.Branch;
         if (payload.Region != null)
             user.Region = payload.Region;

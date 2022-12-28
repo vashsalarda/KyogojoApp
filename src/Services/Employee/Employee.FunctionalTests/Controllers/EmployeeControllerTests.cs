@@ -176,7 +176,7 @@ namespace Employee.FunctionalTests.Controllers
             Assert.Equal("OK", statusCode2);
             Assert.Equal(id, result2?.Id);
             Assert.Equal(request.UserId, result2?.UserId);
-            Assert.Equal(request.Region, result2?.Region);
+            Assert.Equal(request.Branch, result2?.Branch);
             Assert.Equal(request.Title, result2?.Title);
         }
 

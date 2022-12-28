@@ -27,7 +27,7 @@ namespace Employee.API.Migrations
                     department = table.Column<string>(type: "text", nullable: true),
                     position = table.Column<string>(type: "text", nullable: true),
                     designation = table.Column<string>(type: "text", nullable: true),
-                    datehired = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    datehired = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     sss = table.Column<string>(type: "text", nullable: true),
                     phic = table.Column<string>(type: "text", nullable: true),
                     pagibig = table.Column<string>(type: "text", nullable: true),
