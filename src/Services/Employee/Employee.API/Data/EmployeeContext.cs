@@ -62,7 +62,7 @@ namespace Employee.API.Data
 				e.Property(e => e.LastName).HasColumnName("lastname");
 				e.Property(e => e.MobileNumber).HasColumnName("mobilenumber");
 				e.Property(e => e.Country).HasColumnName("country");
-				e.Property(e => e.State).HasColumnName("state");
+				e.Property(e => e.Province).HasColumnName("province");
 				e.Property(e => e.City).HasColumnName("city");
 				e.Property(e => e.Role).HasColumnName("role");
 				e.Property(e => e.Designation).HasColumnName("designation");

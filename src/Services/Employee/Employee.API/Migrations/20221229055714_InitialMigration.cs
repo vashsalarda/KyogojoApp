@@ -51,7 +51,7 @@ namespace Employee.API.Migrations
                     lastname = table.Column<string>(type: "text", nullable: false),
                     mobilenumber = table.Column<string>(type: "text", nullable: false),
                     country = table.Column<string>(type: "text", nullable: false),
-                    state = table.Column<string>(type: "text", nullable: false),
+                    province = table.Column<string>(type: "text", nullable: false),
                     city = table.Column<string>(type: "text", nullable: false),
                     role = table.Column<string[]>(type: "text[]", nullable: false),
                     designation = table.Column<string>(type: "text", nullable: false),

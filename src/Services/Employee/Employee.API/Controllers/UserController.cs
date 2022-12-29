@@ -86,8 +86,8 @@ namespace Employee.API.Controllers
 				user.MobileNumber = payload.MobileNumber;
 			if (payload.Country != null)
 				user.Country = payload.Country;
-			if (payload.State != null)
-				user.State = payload.State;
+			if (payload.Province != null)
+				user.Province = payload.Province;
 			if (payload.City != null)
 				user.City = payload.City;
 			if (payload.Role != null)

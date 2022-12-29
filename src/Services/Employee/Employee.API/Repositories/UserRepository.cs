@@ -50,7 +50,7 @@ namespace Employee.API.Repositories
 
             var affected =
                 await connection.ExecuteAsync
-                    ("INSERT INTO Users (Id, Email, FirstName, LastName, MobileNumber, Country, State, City, Role, Designation, Password) VALUES (@Id, @Email, @FirstName, @LastName, @MobileNumber, @Country, @State, @City, @Role, @Designation, @Password)",
+                    ("INSERT INTO Users (Id, Email, FirstName, LastName, MobileNumber, Country, Province, City, Role, Designation, Password) VALUES (@Id, @Email, @FirstName, @LastName, @MobileNumber, @Country, @Province, @City, @Role, @Designation, @Password)",
                         new { 
                             Id = user.Id,
                             Email = user.Email,
@@ -58,7 +58,7 @@ namespace Employee.API.Repositories
                             LastName = user.LastName,
                             MobileNumber = user.MobileNumber,
                             Country = user.Country,
-                            State = user.State,
+                            Province = user.Province,
                             City = user.City,
                             Role = user.Role,
                             Designation = user.Designation,
@@ -76,7 +76,7 @@ namespace Employee.API.Repositories
             using var connection = new NpgsqlConnection(_configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
 
             var affected = await connection.ExecuteAsync
-                ("UPDATE Users SET Email = @Email, FirstName = @FirstName, LastName = @LastName, MobileNumber = @MobileNumber, Country = @Country, State = @State, City = @City, Role = @Role, Designation = @Designation WHERE Id = @Id",
+                ("UPDATE Users SET Email=@Email, FirstName=@FirstName, LastName=@LastName, MobileNumber=@MobileNumber, Country=@Country, Province=@Province, City=@City, Role=@Role, Designation=@Designation WHERE Id=@Id",
                     new {
                         Id = id,
                         Email = user.Email,
@@ -84,10 +84,11 @@ namespace Employee.API.Repositories
                         FirstName = user.FirstName,
                         MobileNumber = user.MobileNumber,
                         Country = user.Country,
-                        State = user.State,
+                        Province = user.Province,
                         City = user.City,
                         Role = user.Role,
-                        Designation = user.Designation
+                        Designation = user.Designation,
+                        Password = user.Password
                     });
 
             if (affected == 0)

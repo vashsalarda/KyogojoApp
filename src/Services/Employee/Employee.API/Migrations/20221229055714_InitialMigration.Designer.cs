@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Employee.API.Migrations
 {
     [DbContext(typeof(EmployeeContext))]
-    [Migration("20221228104554_InitialMigration")]
+    [Migration("20221229055714_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -163,15 +163,15 @@ namespace Employee.API.Migrations
                         .HasColumnType("text")
                         .HasColumnName("password");
 
+                    b.Property<string>("Province")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("province");
+
                     b.Property<string[]>("Role")
                         .IsRequired()
                         .HasColumnType("text[]")
                         .HasColumnName("role");
-
-                    b.Property<string>("State")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("state");
 
                     b.HasKey("Id");
 

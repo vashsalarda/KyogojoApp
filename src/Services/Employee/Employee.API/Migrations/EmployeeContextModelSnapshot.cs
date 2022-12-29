@@ -160,15 +160,15 @@ namespace Employee.API.Migrations
                         .HasColumnType("text")
                         .HasColumnName("password");
 
+                    b.Property<string>("Province")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("province");
+
                     b.Property<string[]>("Role")
                         .IsRequired()
                         .HasColumnType("text[]")
                         .HasColumnName("role");
-
-                    b.Property<string>("State")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("state");
 
                     b.HasKey("Id");
 

@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
 namespace Employee.API.Entities;
@@ -7,6 +8,7 @@ public class User
 	[JsonProperty("id")]
 	public string? Id { get; set; }
 
+	[Required]
 	[JsonProperty("email")]
 	public string Email { get; set; } = null!;
 
@@ -22,8 +24,8 @@ public class User
 	[JsonProperty("country")]
 	public string Country { get; set; } = null!;
 
-	[JsonProperty("state")]
-	public string State { get; set; } = null!;
+	[JsonProperty("province")]
+	public string Province { get; set; } = null!;
 
 	[JsonProperty("city")]
 	public string City { get; set; } = null!;
