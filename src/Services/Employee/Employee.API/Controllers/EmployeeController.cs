@@ -65,8 +65,8 @@ public class EmployeeController : ControllerBase
         if (payload.Email != null)
             user.Email = payload.Email;
         if (payload.Branch != null)
-            if (payload.Province != null)
-            user.Province = payload.Province;
+            if (payload.State != null)
+            user.State = payload.State;
         if (payload.Branch != null)
             user.Branch = payload.Branch;
         if (payload.Region != null)

@@ -84,9 +84,9 @@ namespace Employee.API.Migrations
                         .HasColumnType("text")
                         .HasColumnName("position");
 
-                    b.Property<string>("Province")
+                    b.Property<string>("State")
                         .HasColumnType("text")
-                        .HasColumnName("province");
+                        .HasColumnName("state");
 
                     b.Property<string>("Region")
                         .HasColumnType("text")
@@ -163,10 +163,10 @@ namespace Employee.API.Migrations
                         .HasColumnType("text")
                         .HasColumnName("password");
 
-                    b.Property<string>("Province")
+                    b.Property<string>("State")
                         .IsRequired()
                         .HasColumnType("text")
-                        .HasColumnName("province");
+                        .HasColumnName("state");
 
                     b.Property<string[]>("Role")
                         .IsRequired()

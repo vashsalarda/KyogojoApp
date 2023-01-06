@@ -27,7 +27,7 @@ public class UserControllerTest
                 Email = "vashful@pm-moonshot.com",
                 MobileNumber = "8080",
                 Country = "PH",
-                Province = "BUK",
+                State = "BUK",
                 City = "Malaybalay"
             },
             new User()
@@ -38,7 +38,7 @@ public class UserControllerTest
                 Email = "jp.test@pm-moonshot.com",
                 MobileNumber = "911",
                 Country = "PH",
-                Province = "BUK",
+                State = "BUK",
                 City = "Malaybalay"
             },
             new User()
@@ -49,7 +49,7 @@ public class UserControllerTest
                 Email = "nino.paul@pm-moonshot.com",
                 MobileNumber = "117",
                 Country = "PH",
-                Province = "BUK",
+                State = "BUK",
                 City = "Kibawe"
             }
         };
@@ -114,7 +114,7 @@ public class UserControllerTest
             Email = "jm.grills@pm-moonshot.com",
             MobileNumber = "4438",
             Country = "PH",
-            Province = "MISOR",
+            State = "MISOR",
             City = "CDO",
             Password = "DeleteTableUser"
         };
@@ -136,7 +136,7 @@ public class UserControllerTest
         Assert.Equal("jm.grills@pm-moonshot.com", customerObj?.Email);
         Assert.Equal("4438", customerObj?.MobileNumber);
         Assert.Equal("PH", customerObj?.Country);
-        Assert.Equal("MISOR", customerObj?.Province);
+        Assert.Equal("MISOR", customerObj?.State);
         Assert.Equal("CDO", customerObj?.City);
         
     }
@@ -153,7 +153,7 @@ public class UserControllerTest
             Email = "jm.grills@pm-moonshot.com",
             MobileNumber = "4438",
             Country = "PH",
-            Province = "MISOR",
+            State = "MISOR",
             City = "CDO"
         };
         _mockRepository.Setup(repo => repo.UpdateUser(It.IsAny<User>(), It.IsAny<string>())).Returns(Task.FromResult(true));

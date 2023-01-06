@@ -78,7 +78,7 @@ namespace Employee.FunctionalTests.Controllers
                 UserId = "1011",
                 Branch = "Malaybalay - Main",
                 City = "Malaybalay",
-                Province = "Buk",
+                State = "Buk",
                 Title = "Engr.",
                 Department = "IT",
                 Position = "Major",
@@ -159,7 +159,7 @@ namespace Employee.FunctionalTests.Controllers
                 Email = "vashful.v2@gmail.com",
                 Branch = "Malaybalay - Main",
                 City = "Malaybalay",
-                Province = "Buk",
+                State = "Buk",
                 Department = "IT",
                 Position = "Major",
                 Designation = "Problem",
@@ -191,7 +191,7 @@ namespace Employee.FunctionalTests.Controllers
             Assert.Equal(request.Email, result2?.Email);
             Assert.Equal(request.Branch, result2?.Branch);
             Assert.Equal(request.City, result2?.City);
-            Assert.Equal(request.Province, result2?.Province);
+            Assert.Equal(request.State, result2?.State);
             Assert.Equal(request.Department, result2?.Department);
             Assert.Equal(request.Position, result2?.Position);
             Assert.Equal(request.Designation, result2?.Designation);

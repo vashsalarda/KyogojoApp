@@ -19,8 +19,8 @@ namespace Employee.API.Entities
         public string? Branch { get; set; }
         [JsonProperty("city")]
         public string? City { get; set; }
-        [JsonProperty("province")]
-        public string? Province { get; set; }
+        [JsonProperty("state")]
+        public string? State { get; set; }
         [JsonProperty("region")]
         public string? Region { get; set; }
         [JsonProperty("title")]

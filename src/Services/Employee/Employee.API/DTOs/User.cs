@@ -19,8 +19,8 @@ namespace Employee.API.DTOs
         [JsonProperty("country")]
         public string Country { get; set; } = null!;
 
-        [JsonProperty("province")]
-        public string Province { get; set; } = null!;
+        [JsonProperty("state")]
+        public string State { get; set; } = null!;
 
         [JsonProperty("city")]
         public string City { get; set; } = null!;
@@ -52,8 +52,8 @@ namespace Employee.API.DTOs
         [JsonProperty("country")]
         public string Country { get; set; } = null!;
 
-        [JsonProperty("province")]
-        public string Province { get; set; } = null!;
+        [JsonProperty("state")]
+        public string State { get; set; } = null!;
 
         [JsonProperty("city")]
         public string City { get; set; } = null!;
@@ -86,8 +86,8 @@ namespace Employee.API.DTOs
         [JsonProperty("country")]
         public string Country { get; set; } = null!;
 
-        [JsonProperty("province")]
-        public string Province { get; set; } = null!;
+        [JsonProperty("state")]
+        public string State { get; set; } = null!;
 
         [JsonProperty("city")]
         public string City { get; set; } = null!;

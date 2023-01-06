@@ -24,7 +24,7 @@ namespace Employee.SharedDatabaseSetup
                 .RuleFor(o => o.UserId, f => (userIdStartId++).ToString())
                 .RuleFor(o => o.Branch, f => "Main")
                 .RuleFor(o => o.City, f => "Malaybalay")
-                .RuleFor(o => o.Province, f => "BUK")
+                .RuleFor(o => o.State, f => "BUK")
                 .RuleFor(o => o.Region, f => "X")
                 .RuleFor(o => o.Title, f => "Engr.")
                 .RuleFor(o => o.Department, f => "Admin")
@@ -50,7 +50,7 @@ namespace Employee.SharedDatabaseSetup
                 .RuleFor(o => o.MobileNumber, f => "09566725103")
                 .RuleFor(o => o.Country, f => "PH")
                 .RuleFor(o => o.City, f => "Malaybalay")
-                .RuleFor(o => o.Province, f => "Buk")
+                .RuleFor(o => o.State, f => "Buk")
                 .RuleFor(o => o.Role, f => role)
                 .RuleFor(o => o.Designation, f => "Admin")
                 .RuleFor(o => o.Password, f => password);

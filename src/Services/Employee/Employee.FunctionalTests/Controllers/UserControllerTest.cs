@@ -47,7 +47,7 @@ namespace Employee.FunctionalTests.Controllers
             Assert.IsType<string>(result.FirstName);
             Assert.IsType<string>(result.MobileNumber);
             Assert.IsType<string>(result.Country);
-            Assert.IsType<string>(result.Province);
+            Assert.IsType<string>(result.State);
             Assert.IsType<string>(result.City);
             Assert.IsType<string[]>(result.Role);
             Assert.IsType<string>(result.Designation);
@@ -80,7 +80,7 @@ namespace Employee.FunctionalTests.Controllers
                 LastName = "Salarda",
                 FirstName = "Vash",
                 City = "Malaybalay",
-                Province = "Buk",
+                State = "Buk",
                 Country = "PH",
                 Role = new[] { "Admin" },
                 Designation = "Problem",
@@ -115,7 +115,7 @@ namespace Employee.FunctionalTests.Controllers
             Assert.Equal(newUser?.LastName, result2?.LastName);
             Assert.Equal(newUser?.MobileNumber, result2?.MobileNumber);
             Assert.Equal(newUser?.Country, result2?.Country);
-            Assert.Equal(newUser?.Province, result2?.Province);
+            Assert.Equal(newUser?.State, result2?.State);
             Assert.Equal(newUser?.City, result2?.City);
             Assert.Equal(newUser?.Role, result2?.Role);
             Assert.Equal(newUser?.Designation, result2?.Designation);
@@ -137,7 +137,7 @@ namespace Employee.FunctionalTests.Controllers
                 LastName = "Grills",
                 MobileNumber = "0927-147-8417",
                 City = "Malaybalay",
-                Province = "MisOr",
+                State = "MisOr",
                 Country = "PHI",
                 Role = new[] { "Admin" },
                 Designation = "Problem"
@@ -166,7 +166,7 @@ namespace Employee.FunctionalTests.Controllers
             Assert.Equal(request.FirstName, result2?.FirstName);
             Assert.Equal(request.LastName, result2?.LastName);
             Assert.Equal(request.MobileNumber, result2?.MobileNumber);
-            Assert.Equal(request.Province, result2?.Province);
+            Assert.Equal(request.State, result2?.State);
             Assert.Equal(request.City, result2?.City);
             Assert.Equal(request.Country, result2?.Country);
             Assert.Equal(request.Role, result2?.Role);

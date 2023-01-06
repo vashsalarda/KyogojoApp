@@ -40,13 +40,13 @@ namespace Employee.API.Repositories
 
             var affected =
                 await connection.ExecuteAsync
-                    ("INSERT INTO Employees (Id, UserId, Branch, Province, Region, Title, Department, Position, Designation, DateHired) VALUES (@Id, @UserId, @Branch, @Province, @Region, @Title, @Department, @Position, @Designation, @DateHired)",
+                    ("INSERT INTO Employees (Id, UserId, Branch, State, Region, Title, Department, Position, Designation, DateHired) VALUES (@Id, @UserId, @Branch, @State, @Region, @Title, @Department, @Position, @Designation, @DateHired)",
                         new { 
                             Id = customer.Id,
                             UserId = customer.UserId,
                             Branch = customer.Branch,
                             City = customer.City,
-                            Province = customer.Province,
+                            State = customer.State,
                             Region = customer.Region,
                             Title = customer.Title,
                             Department = customer.Department,
@@ -66,7 +66,7 @@ namespace Employee.API.Repositories
             using var connection = new NpgsqlConnection(_configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
 
             var affected = await connection.ExecuteAsync
-                ("UPDATE Employees SET UserId=@UserId, ContactNumber=@ContactNumber, Email=@Email, Branch=@Branch, Province=@Province, Region=@Region, Title=@Title, Department=@Department, Position=@Position, Designation=@Designation WHERE Id=@Id",
+                ("UPDATE Employees SET UserId=@UserId, ContactNumber=@ContactNumber, Email=@Email, Branch=@Branch, State=@State, Region=@Region, Title=@Title, Department=@Department, Position=@Position, Designation=@Designation WHERE Id=@Id",
                     new {
                         Id = id,
                         UserId = employee.UserId,
@@ -74,7 +74,7 @@ namespace Employee.API.Repositories
                         ContactNumber = employee.ContactNumber,
                         Branch = employee.Branch,
                         City = employee.City,
-                        Province = employee.Province,
+                        State = employee.State,
                         Region = employee.Region,
                         Title = employee.Title,
                         Department = employee.Department,
